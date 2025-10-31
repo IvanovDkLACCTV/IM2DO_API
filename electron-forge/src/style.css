@@ -1,9 +1,17 @@
 body {
     font-family: sans-serif;
-    max-width: 600px;
+    max-width: 1200px;
     margin: auto;
     padding: 1rem;
 }
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
 label {
     display: block;
     margin-bottom: 0.5rem;
@@ -26,9 +34,15 @@ button {
     cursor: pointer;
 }
 .response {
-    white-space: pre-wrap;
+    text-align: left;
+    white-space: pre-wrap; /* ✅ сохраняет переносы и отступы */
+    word-break: break-word; /* ✅ переносит длинные слова */
+    font-family: monospace; /* ✅ моноширинный шрифт для XML */
     background: #f4f4f4;
     padding: 1rem;
     border: 1px solid #ccc;
     margin-top: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto; /* ✅ горизонтальный скролл при необходимости */
 }

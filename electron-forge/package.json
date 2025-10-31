@@ -1,6 +1,6 @@
 {
   "name": "im2do-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Конфигуратор IP-камеры LA-IM2DO",
   "author": {
     "name": "Dmitrii Ivanov",
@@ -8,10 +8,10 @@
   },
   "main": "src/main.js",
   "scripts": {
+    "dev": "nodemon --watch src/main.js --exec electron-forge start",
     "start": "electron-forge start",
     "make": "electron-forge make",
-    "package": "electron-forge package",
-    "publish": "electron-forge publish"
+    "package": "electron-forge package"
   },
   "config": {
     "forge": "./forge.config.js"
@@ -27,6 +27,8 @@
     "@electron-forge/maker-rpm": "^6.4.2",
     "@electron-forge/maker-squirrel": "^6.4.2",
     "@electron-forge/maker-zip": "^6.4.2",
-    "electron": "^38.4.0"
+    "electron": "^38.4.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "nodemon": "^3.1.10"
   }
 }

@@ -8,61 +8,67 @@
     </head>
     <body>
         <h1>Настройка сети IP-камеры</h1>
+        <div class="container">
+            <form id="networkForm" onsubmit="return false">
+                <label>
+                    IP-адрес камеры:
+                    <input
+                        type="text"
+                        id="cameraIp"
+                        value="192.168.2.63"
+                        required
+                    />
+                </label>
+                <label>
+                    Логин:
+                    <input type="text" id="username" value="admin" />
+                </label>
+                <label>
+                    Пароль:
+                    <input type="password" id="password" />
+                </label>
 
-        <form id="networkForm" onsubmit="return false">
-            <label>
-                IP-адрес камеры:
-                <input
-                    type="text"
-                    id="cameraIp"
-                    value="192.168.1.51"
-                    required
-                />
-            </label>
-            <label>
-                Логин:
-                <input type="text" id="username" value="admin" />
-            </label>
-            <label>
-                Пароль:
-                <input type="password" id="password" />
-            </label>
+                <div class="flex">
+                    <button type="button" onclick="getNetwork()">
+                        GET параметры
+                    </button>
+                    <button type="button" onclick="setDefault()">
+                        Default
+                    </button>
+                    <button type="button" onclick="setNetwork()">
+                        PUT (изменить)
+                    </button>
+                </div>
 
-            <div class="flex">
-                <button type="button" onclick="getNetwork()">
-                    GET параметры
-                </button>
-                <button type="button" onclick="setNetwork()">
-                    PUT (изменить)
-                </button>
+                <hr />
+
+                <label>
+                    Новый IP-адрес:
+                    <input type="text" id="ipAddress" />
+                </label>
+                <label>
+                    Маска подсети:
+                    <input type="text" id="subnetMask" />
+                </label>
+                <label>
+                    Шлюз:
+                    <input type="text" id="gateway" />
+                </label>
+                <label>
+                    IPAdaptive:
+                    <select id="ipAdaptive">
+                        <option value="close">close</option>
+                        <option value="open">open</option>
+                    </select>
+                </label>
+            </form>
+            <div class="right-side">
+                <h2>Ответ устройства:</h2>
+                <div class="response" id="responseBox">
+                    Ответ будет здесь...
+                </div>
             </div>
-
-            <hr />
-
-            <label>
-                Новый IP-адрес:
-                <input type="text" id="ipAddress" />
-            </label>
-            <label>
-                Маска подсети:
-                <input type="text" id="subnetMask" />
-            </label>
-            <label>
-                Шлюз:
-                <input type="text" id="gateway" />
-            </label>
-            <label>
-                IPAdaptive:
-                <select id="ipAdaptive">
-                    <option value="close">close</option>
-                    <option value="open">open</option>
-                </select>
-            </label>
-        </form>
-
-        <h2>Ответ устройства:</h2>
-        <div class="response" id="responseBox">Ответ будет здесь...</div>
-
+        </div>
         <script src="renderer.js"></script>
     </body>
 </html>

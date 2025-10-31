@@ -133,3 +133,13 @@ async function setNetwork() {
     document.getElementById("responseBox").textContent = `Ошибка: ${err}`;
   }
 }
+
+function setDefault() {
+  document.getElementById("ipAddress").value = "192.168.2.63";
+  document.getElementById("subnetMask").value = "255.255.255.0";
+  document.getElementById("gateway").value = "192.168.2.1";
+  document.getElementById("ipAdaptive").value = "close";
+
+  document.getElementById("responseBox").textContent =
+    "Значения по умолчанию подставлены.";
+}
